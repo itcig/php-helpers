@@ -1,0 +1,22 @@
+{
+    "name": "itcig/cig-php-helpers",
+    "description": "PHP helper methods",
+    "type": "library",
+    "authors": [
+        {
+            "name": "Brad",
+            "email": "bash@capinfogroup.com"
+        }
+    ],
+	"require": {
+		"php": "^7.1"
+	},
+	"autoload": {
+		"files": [
+			"src/index.php"
+		],
+		"psr-4": {
+			"Cig\\": "src/"
+		}
+	}
+}
