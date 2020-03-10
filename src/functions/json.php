@@ -7,7 +7,7 @@ namespace Cig;
  *
  * @return bool True if valid JSON
  */
-function is_json(string $json_string) : bool {
+function is_json(string $json_string): bool {
 	json_decode($json_string);
 	return (json_last_error() === JSON_ERROR_NONE);
 }
