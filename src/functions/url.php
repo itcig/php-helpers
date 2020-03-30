@@ -48,6 +48,23 @@ function parse_querystring(?string $url = null): ?array {
 }
 
 /**
+ * Compare two URLs and assert if their hostname is the same
+ *
+ * @param string $url The control URL to compare against
+ * @param string|null $url2 Comparison URL. Uses current url if null.
+ *
+ * @return bool
+ */
+function is_same_hostname(string $url, ?string $url2 = null): bool {
+	// If no URL or server request, return false
+	if (empty($url2) && empty(current_url())) {
+		return false;
+	}
+
+	return parse_url($url, PHP_URL_HOST) === parse_url($url2 ?? current_url(), PHP_URL_HOST);
+}
+
+/**
  * Strip a Url down to just the bare domain without subdomains
  *
  * @param string|null $url Any full URL to extract the domain. Uses current REQUEST_URI if null.
@@ -71,15 +88,15 @@ function get_root_domain(?string $url = null): ?string {
  * Compare two URLs and assert if their root domain is the same
  *
  * @param string $url The control URL to compare against
- * @param string|null $url2 Comparison URL. Uses current REQUEST_URI if null.
+ * @param string|null $url2 Comparison URL. Uses current url if null.
  *
  * @return bool
  */
 function is_same_root_domain(string $url, ?string $url2 = null): bool {
 	// If no URL or server request, return false
-	if (empty($url2) && empty($_SERVER['REQUEST_URI'])) {
+	if (empty($url2) && empty(current_url())) {
 		return false;
 	}
 
-	return get_root_domain($url) === get_root_domain($url2 ?? $_SERVER['REQUEST_URI']);
+	return get_root_domain($url) === get_root_domain($url2 ?? current_url());
 }
