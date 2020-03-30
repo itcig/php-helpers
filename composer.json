@@ -2,6 +2,7 @@
     "name": "itcig/php-helpers",
     "description": "PHP helper methods",
     "type": "library",
+	"license": "Apache-2.0",
     "authors": [
         {
             "name": "Brad",
