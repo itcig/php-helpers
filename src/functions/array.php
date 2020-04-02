@@ -39,7 +39,8 @@ function to_javascript_object(array $arr, $sequential_keys = false, $quote_keys 
 		else if (is_bool($value)) {
 			$output .= ($value ? 'true' : 'false');
 		}
-		else if (is_numeric($value)) {
+		// Check for octal notation beginning with 0 in addition to is_numeric()
+		else if (is_numeric($value) && strpos($value, "0") !== 0) {
 			$output .= $value;
 		}
 		else {
