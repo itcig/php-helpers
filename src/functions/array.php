@@ -36,11 +36,13 @@ function to_javascript_object(array $arr, $sequential_keys = false, $quote_keys 
 		if (is_array($value)) {
 			$output .= to_javascript_object($value, $sequential_keys, $quote_keys);
 		}
+		// Convert boolean to JS keyword `true|false`
 		else if (is_bool($value)) {
 			$output .= ($value ? 'true' : 'false');
 		}
 		// Check for octal notation beginning with 0 in addition to is_numeric()
-		else if (is_numeric($value) && strpos($value, "0") !== 0) {
+		// Also account for values that are literally 0 and keep these numeric
+		else if (is_numeric($value) && (strpos($value, "0") !== 0 || empty($value))) {
 			$output .= $value;
 		}
 		else {
