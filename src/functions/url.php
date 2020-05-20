@@ -42,7 +42,7 @@ function url_path(?string $url = null): ?string {
 function parse_querystring(?string $url = null): ?array {
 	$qs_array = [];
 
-	parse_str(parse_url($url ?? $_SERVER['REQUEST_URI'] ?? "", PHP_URL_QUERY), $qs_array);
+	parse_str(parse_url($url ?? current_url() ?? "", PHP_URL_QUERY), $qs_array);
 
 	return !empty($qs_array) ? $qs_array : null;
 }
