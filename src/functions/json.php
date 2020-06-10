@@ -34,7 +34,7 @@ function json_encode_numeric($value, $options = 0, $depth = 512): string {
 function json_parse_numeric(&$value) {
 	if (is_string($value) && is_numeric($value)) {
 		// check if value doesn't starts with 0 or +
-		if (!preg_match('/^[0\+]+/', $value)) {
+		if (!preg_match('/^[0\+]+/', $value) || $value === "0") {
 			// cast $value to int or float
 			$value += 0;
 		}
