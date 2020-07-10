@@ -38,22 +38,25 @@ function is_assoc(array $arr) {
  *
  * @param array $arr
  * @param bool $sequential_keys
- * @param bool $quote_keys
+ * @param bool $quote_all_keys
  *
  * @return string
  */
-function to_javascript_object(array $arr, $sequential_keys = false, $quote_keys = false) {
+function to_javascript_object(array $arr, $sequential_keys = false, $quote_all_keys = false) {
 
 	$output = is_assoc($arr) ? "{" : "[";
 	$count = 0;
 	foreach ($arr as $key => $value) {
 
+		// If $quote_keys OR key contains a non-standard JS key character then wrap in quotes
+		$quote_key = $quote_all_keys || preg_match('/[^\w]+/', $key);
+
 		if (is_assoc($arr) || (!is_assoc($arr) && $sequential_keys == true )) {
-			$output .= ($quote_keys ? '"' : '') . $key . ($quote_keys ? '"' : '') . ': ';
+			$output .= ($quote_key ? '"' : '') . $key . ($quote_key ? '"' : '') . ': ';
 		}
 
 		if (is_array($value)) {
-			$output .= to_javascript_object($value, $sequential_keys, $quote_keys);
+			$output .= to_javascript_object($value, $sequential_keys, $quote_all_keys);
 		}
 		// Convert boolean to JS keyword `true|false`
 		else if (is_bool($value)) {
