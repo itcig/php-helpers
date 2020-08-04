@@ -4,9 +4,8 @@ namespace Cig;
 
 
 function current_url(): ?string {
-
 	// Return null if not an http request
-	if (empty($_SERVER['SERVER_NAME']) || empty($_SERVER['REQUEST_URI'])) {
+	if (!isset($_SERVER['SERVER_NAME']) || empty($_SERVER['REQUEST_URI'])) {
 		return null;
 	}
 
@@ -18,7 +17,7 @@ function current_url(): ?string {
 
 	$port = ((!$ssl && $_SERVER['SERVER_PORT'] === '80') || ($ssl && $_SERVER['SERVER_PORT'] === '443') ) ? '' : ':' . $_SERVER['SERVER_PORT'];
 
-	$host = $_SERVER['SERVER_NAME'] . $port;
+	$host = !empty($_SERVER['SERVER_NAME']) ? $_SERVER['SERVER_NAME'] . $port : $_SERVER['HTTP_HOST'];
 
 	return $protocol . '://' . $host . $_SERVER['REQUEST_URI'];
 }
