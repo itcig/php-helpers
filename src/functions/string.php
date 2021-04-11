@@ -107,7 +107,7 @@ function split_on_words(string $string): array {
  *
  * @return string[] The prepped words in the string
  */
-function str_str_to_words(string $string, bool $lower = false, bool $remove_punctuation = false): array {
+function str_to_words(string $string, bool $lower = false, bool $remove_punctuation = false): array {
 	// Convert CamelCase to multiple words
 	// Regex copied from Inflector::camel2words(), but without dropping punctuation
 	$string = preg_replace('/(?<!\p{Lu})(\p{Lu})|(\p{Lu})(?=\p{Ll})/u', ' \0', $string);
