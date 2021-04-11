@@ -127,3 +127,18 @@ function str_to_words(string $string, bool $lower = false, bool $remove_punctuat
 	// Split on the words and return
 	return split_on_words($string);
 }
+
+/**
+ * Convert HTML line breaks to CRLF
+ *
+ * @param $string
+ *
+ * @return string
+ */
+function br2nl($string) {
+	$string = preg_replace("/(<\/?(br)\s*\/?>\n*\s*){3,}/s", "<br /><br />", $string);
+	$string = str_replace("<br /><br />","\n\n", $string);
+	$string = str_replace("<br />","\n", $string);
+
+	return $string;
+}
