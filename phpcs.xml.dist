@@ -1,0 +1,55 @@
+<?xml version="1.0"?>
+<ruleset name="PHP Helpers" namespace="">
+
+	<!--
+	   The name attribute of the ruleset tag is displayed
+	   when running PHP_CodeSniffer with the -v command line
+	   argument.
+
+	   If you have custom sniffs, and they use a namespace prefix
+	   that is different to the name of the directory containing
+	   your ruleset.xml file, you can set the namespace prefix using
+	   the namespace attribute of the ruleset tag.
+
+	   For example, if your namespace format for sniffs is
+	   MyProject\CS\Standard\Sniffs\Category, set the namespace to
+	   MyProject\CS\Standard (everything up to \Sniffs\)
+	-->
+
+	<!--
+	   The content of the description tag is not displayed anywhere
+	   except in this file, so it can contain information for
+	   developers who may change this file in the future.
+	-->
+	<description>CIG's Coding Standard</description>
+
+	<file>./src</file>
+	<file>./tests</file>
+
+	<arg name="basepath" value="."/>
+	<arg name="colors"/>
+	<arg name="cache" value=".phpcs-cache"/>
+
+	<!-- Check all PHP files in directory tree by default. -->
+	<arg name="extensions" value="php"/>
+
+	<!-- Show progress and sniff codes in all reports -->
+	<arg value="ps"/>
+
+	<!--	TODO: How can we import CIG coding standard like how Doctrine is below -->
+	<!-- Import the Doctrine coding standard -->
+	<!--	<rule ref="Doctrine"/>-->
+
+	<!--
+	   You can hard-code ignore patterns directly into your
+	   custom standard so you don't have to specify the
+	   patterns on the command line.
+
+	   The following two tags are equivalent to the command line argument:
+	   -ignore=*/tests/*,*/data/*
+	-->
+	<exclude-pattern>*/vendor/*</exclude-pattern>
+
+	<rule ref="CIG" />
+
+</ruleset>

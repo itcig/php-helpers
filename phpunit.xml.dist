@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<phpunit
+		xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+		backupGlobals="false"
+		backupStaticAttributes="false"
+		bootstrap="tests/phpunit/bootstrap.php"
+		colors="true"
+		convertErrorsToExceptions="true"
+		convertNoticesToExceptions="true"
+		convertWarningsToExceptions="true"
+		beStrictAboutTestsThatDoNotTestAnything="false"
+		processIsolation="false"
+		stopOnFailure="false"
+		xsi:noNamespaceSchemaLocation="https://schema.phpunit.de/9.5/phpunit.xsd">
+
+	<coverage processUncoveredFiles="true">
+		<include>
+			<directory suffix=".php">src</directory>
+		</include>
+	</coverage>
+
+	<testsuites>
+		<testsuite name="Integration">
+			<directory suffix="Test.php">tests/phpunit/Integration</directory>
+		</testsuite>
+		<testsuite name="Unit">
+			<directory suffix="Test.php">tests/phpunit/Unit</directory>
+		</testsuite>
+	</testsuites>
+
+<!-- not used in this repo[php-helpers], saved for reference -->
+	<php>
+		<env name="APP_ENV" value="test" />
+		<env name="TEST_USER" value="dev" />
+		<env name="TEST_PASSWORD" value="testpassword" />
+		<env name="TEST_APPLICATION_CODE" value="test" />
+	</php>
+
+</phpunit>
