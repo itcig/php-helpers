@@ -63,4 +63,14 @@ class StrToHumanReadableTest extends \Cig\Tests\Unit\BaseTestCase {
 
 		self::assertSame($expected_result, $result);
 	}
+
+	//TODO: another instance of integers turning into strings: expected or no?
+	public function test_str_to_human_readable_integer(): void {
+		$string = 42;
+		$expected_result = '42';
+
+		$result = \Cig\str_to_human_readable($string);
+
+		self::assertSame($expected_result, $result);
+	}
 }
