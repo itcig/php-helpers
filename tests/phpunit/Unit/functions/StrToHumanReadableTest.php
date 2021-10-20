@@ -36,4 +36,13 @@ class StrToHumanReadableTest extends \Cig\Tests\Unit\BaseTestCase {
 
 		$result = \Cig\str_to_human_readable($array);
 	}
+
+	public function test_str_to_human_readable_pascal(): void {
+		$string = 'PascalCaseIsTheCase';
+		$expected_result = 'Pascal Case Is The Case';
+
+		$result = \Cig\str_to_human_readable($string);
+
+		self::assertSame($expected_result, $result);
+	}
 }
