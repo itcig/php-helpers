@@ -45,4 +45,13 @@ class StrToHumanReadableTest extends \Cig\Tests\Unit\BaseTestCase {
 
 		self::assertSame($expected_result, $result);
 	}
+
+	public function test_str_to_human_readable_snake(): void {
+		$string = "itsa_me_snake_case";
+		$expected_result = "itsa me snake case";
+
+		$result = \Cig\str_to_human_readable($string);
+
+		self::assertSame($expected_result, $result);
+	}
 }
