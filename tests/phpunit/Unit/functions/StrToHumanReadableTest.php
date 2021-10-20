@@ -9,8 +9,8 @@ class StrToHumanReadableTest extends \Cig\Tests\Unit\BaseTestCase {
 
 	//TODO: look into method re:what defines human readable, caps/all lowercase/etc
 	public function test_str_to_human_readable_camel(): void {
-		$string = "camelCaseStringTest!!";
-		$expected_result = "camel Case String Test";
+		$string = 'camelCaseStringTest!!';
+		$expected_result = 'camel Case String Test';
 
 		$result = \Cig\str_to_human_readable($string);
 
@@ -18,8 +18,8 @@ class StrToHumanReadableTest extends \Cig\Tests\Unit\BaseTestCase {
 	}
 
 	public function test_str_to_human_readable_bicapital(): void {
-		$string = "danny-DeVito_";
-		$expected_result = "danny De Vito";
+		$string = 'danny-DeVito_';
+		$expected_result = 'danny De Vito';
 
 		$result = \Cig\str_to_human_readable($string);
 
