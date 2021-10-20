@@ -4,6 +4,11 @@ namespace Cig\Tests\Unit\Functions;
 
 class StrToHumanReadableTest extends \Cig\Tests\Unit\BaseTestCase {
 
+	/**
+	 * @covers ::\Cig\str_to_human_readable
+	 *
+	 * @return array Strings, expected results
+	 */
 	public function provide_str_case_data(): array {
 		return [
 			'camelCase' => [
@@ -48,6 +53,8 @@ class StrToHumanReadableTest extends \Cig\Tests\Unit\BaseTestCase {
 	}
 
 	/**
+	 * @covers ::\Cig\str_to_human_readable
+	 *
 	 * @dataProvider provide_str_case_data
 	 * @param $string
 	 * @param $expected_result
@@ -59,6 +66,9 @@ class StrToHumanReadableTest extends \Cig\Tests\Unit\BaseTestCase {
 		self::assertSame($expected_result, $result);
 	}
 
+	/**
+	 * @covers ::\Cig\str_to_human_readable
+	 */
 	public function test_str_to_human_readable_with_array(): void {
 		$array = ['spooky', 'scary', 'skeletons'];
 		// $expected_result = ;
