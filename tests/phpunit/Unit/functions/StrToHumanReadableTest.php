@@ -54,4 +54,13 @@ class StrToHumanReadableTest extends \Cig\Tests\Unit\BaseTestCase {
 
 		self::assertSame($expected_result, $result);
 	}
+
+	public function test_str_to_human_readable_kebab(): void {
+		$string = 'kebab-case-pepper-tomato';
+		$expected_result = 'kebab case pepper tomato';
+
+		$result = \Cig\str_to_human_readable($string);
+
+		self::assertSame($expected_result, $result);
+	}
 }
