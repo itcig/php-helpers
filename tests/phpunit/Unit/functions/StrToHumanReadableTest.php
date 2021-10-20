@@ -26,4 +26,14 @@ class StrToHumanReadableTest extends \Cig\Tests\Unit\BaseTestCase {
 		// note: not technically a 'fail' but incorrectly separates surnames with bicapital
 		self::assertSame($expected_result, $result);
 	}
+
+	public function test_str_to_human_readable_with_array(): void {
+		$array = ['spooky', 'scary', 'skeletons'];
+		// $expected_result = ;
+
+		$this->expectError();
+		$this->expectErrorMessage('Argument 1 passed to Cig\str_to_human_readable() must be of the type string, array given');
+
+		$result = \Cig\str_to_human_readable($array);
+	}
 }
