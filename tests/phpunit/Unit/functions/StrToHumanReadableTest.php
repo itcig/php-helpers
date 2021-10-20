@@ -1,9 +1,6 @@
 <?php
 
-namespace Cig\Tests\Unit;
-
-use PHPUnit\Framework\Error\Notice;
-use PHPUnit\Framework\Error\Warning;
+namespace Cig\Tests\Unit\Functions;
 
 class StrToHumanReadableTest extends \Cig\Tests\Unit\BaseTestCase {
 
