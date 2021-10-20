@@ -15,67 +15,48 @@ class StrToHumanReadableTest extends \Cig\Tests\Unit\BaseTestCase {
 				//  expected result
 				'camel Case String Test'
 			],
+			// note: not technically a 'fail' but incorrectly separates surnames with bicapital
+			'bicapital' => [
+				// string
+				'danny-DeVito_',
+				//  expected result
+				'danny De Vito'
+			],
+			'pascal' => [
+				// string
+				'PascalCaseIsTheCase',
+				//  expected result
+				'Pascal Case Is The Case'
+			],
+			'snake' => [
+				// string
+				'itsa_me_snake_case',
+				//  expected result
+				'itsa me snake case'
+			],
+			'kebab' => [
+				// string
+				'kebab-case-pepper-tomato',
+				//  expected result
+				'kebab case pepper tomato'
+			],
+			//TODO: another instance of integers turning into strings: expected or should this fail?
+			'integer' => [
+				// int
+				42,
+				//  expected result
+				'42'
+			],
 		];
 	}
 
 	//TODO: look into method re:what defines human readable, caps/all lowercase/etc
-
 	/**
 	 * @dataProvider provide_str_case_data
 	 * @param $string
 	 * @param $expected_result
 	 */
 	public function test_str_to_human_readable_camel($string, $expected_result): void {
-//		$string = 'camelCaseStringTest!!';
-//		$expected_result = 'camel Case String Test';
-
-		$result = \Cig\str_to_human_readable($string);
-
-		self::assertSame($expected_result, $result);
-	}
-
-	public function test_str_to_human_readable_bicapital(): void {
-		$string = 'danny-DeVito_';
-		$expected_result = 'danny De Vito';
-
-		$result = \Cig\str_to_human_readable($string);
-
-		// note: not technically a 'fail' but incorrectly separates surnames with bicapital
-		self::assertSame($expected_result, $result);
-	}
-
-	public function test_str_to_human_readable_pascal(): void {
-		$string = 'PascalCaseIsTheCase';
-		$expected_result = 'Pascal Case Is The Case';
-
-		$result = \Cig\str_to_human_readable($string);
-
-		self::assertSame($expected_result, $result);
-	}
-
-	public function test_str_to_human_readable_snake(): void {
-		$string = 'itsa_me_snake_case';
-		$expected_result = 'itsa me snake case';
-
-		$result = \Cig\str_to_human_readable($string);
-
-		self::assertSame($expected_result, $result);
-	}
-
-	public function test_str_to_human_readable_kebab(): void {
-		$string = 'kebab-case-pepper-tomato';
-		$expected_result = 'kebab case pepper tomato';
-
-		$result = \Cig\str_to_human_readable($string);
-
-		self::assertSame($expected_result, $result);
-	}
-
-	//TODO: another instance of integers turning into strings: expected or no?
-	public function test_str_to_human_readable_integer(): void {
-		$string = 42;
-		$expected_result = '42';
-
 		$result = \Cig\str_to_human_readable($string);
 
 		self::assertSame($expected_result, $result);
