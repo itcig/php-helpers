@@ -50,7 +50,6 @@ class StrToHumanReadableTest extends \Cig\Tests\Unit\BaseTestCase {
 		];
 	}
 
-	//TODO: look into method re:what defines human readable, caps/all lowercase/etc
 	/**
 	 * @dataProvider provide_str_case_data
 	 * @param $string
@@ -59,6 +58,7 @@ class StrToHumanReadableTest extends \Cig\Tests\Unit\BaseTestCase {
 	public function test_str_to_human_readable_camel($string, $expected_result): void {
 		$result = \Cig\str_to_human_readable($string);
 
+		self::assertIsString($result);
 		self::assertSame($expected_result, $result);
 	}
 
