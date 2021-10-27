@@ -4,9 +4,7 @@ namespace Cig\Tests\Unit\Functions;
 
 class StrToHumanReadableTest extends \Cig\Tests\Unit\BaseTestCase {
 
-	/**
-	 * @covers ::\Cig\str_to_human_readable
-	 *
+	/***
 	 * @return array Strings, expected results
 	 */
 	public function provide_str_case_data(): array {
@@ -59,11 +57,33 @@ class StrToHumanReadableTest extends \Cig\Tests\Unit\BaseTestCase {
 	 * @param $string
 	 * @param $expected_result
 	 */
-	public function test_str_to_human_readable_camel($string, $expected_result): void {
+	public function test_str_to_human_readable($string, $expected_result): void {
 		$result = \Cig\str_to_human_readable($string);
 
 		self::assertIsString($result);
 		self::assertSame($expected_result, $result);
+	}
+
+	/**
+	 * SKIP: replacing accents to names
+	 *
+	 */
+	public function test_str_to_human_readable_accents(): void {
+		$string = "dAngelo";
+		$expected_result = "d'angelo";
+
+		self::markTestSkipped('**WIP** Revisit this test');
+	}
+
+	/**
+	 * SKIP: bringing bicapital surnames together
+	 *
+	 */
+	public function test_str_to_human_readable_no_space_bicapital(): void {
+		$string = 'DannyDeVito';
+		$expected_result = 'Danny DeVito'; 
+
+		self::markTestSkipped('**WIP** Revisit this test');
 	}
 
 	/**
