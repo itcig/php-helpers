@@ -1,6 +1,6 @@
 <?php
 
-namespace Cig\Tests\Unit;
+namespace Cig\Tests\Unit\Functions;
 
 
 class StrToKebabCaseTest extends \Cig\Tests\Unit\BaseTestCase {

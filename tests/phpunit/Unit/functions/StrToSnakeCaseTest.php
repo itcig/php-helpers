@@ -1,6 +1,6 @@
 <?php
 
-namespace Cig\Tests\Unit;
+namespace Cig\Tests\Unit\Functions;
 
 
 class StrToSnakeCaseTest extends \Cig\Tests\Unit\BaseTestCase {

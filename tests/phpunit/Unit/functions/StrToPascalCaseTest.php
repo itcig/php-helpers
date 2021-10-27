@@ -1,6 +1,6 @@
 <?php
 
-namespace Cig\Tests\Unit;
+namespace Cig\Tests\Unit\Functions;
 
 
 class StrToPascalCaseTest extends \Cig\Tests\Unit\BaseTestCase {
