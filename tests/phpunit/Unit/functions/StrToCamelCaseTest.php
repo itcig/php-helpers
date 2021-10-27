@@ -2,9 +2,6 @@
 
 namespace Cig\Tests\Unit;
 
-//TODO: add data provider for all these redundant string tests (in setup?)
-
-
 class StrToCamelCaseTest extends \Cig\Tests\Unit\BaseTestCase {
 
 	/**
@@ -13,15 +10,25 @@ class StrToCamelCaseTest extends \Cig\Tests\Unit\BaseTestCase {
 	public function test_str_to_camel_case(): void {
 		$string = "welcome~ to camel' case!!";
 		$expected_result = "welcomeToCamelCase";
-//		$string = "D'Angelo";
-//		$expected_result = "dAngelo";
 
 		//this method uses another method (str_to_words) from same file (string.php)
 		$result = \Cig\str_to_camel_case($string);
 
 		self::assertIsString($result);
 		self::assertSame($expected_result, $result);
-		// skipping international alphabet tests
+	}
+
+	/**
+	 * SKIP: international alphabets
+	 */
+	public function test_str_to_camel_case_international_alphabets(): void {
+		$int_string = 'Добро пожаловать в верблюжачью';
+		$expected_result = "ДоброПожаловатьВВерблюжачью";
+
+		// current method took one int alphabet test and only removed spaces
+		// $result = \Cig\str_to_camel_case();
+
+		self::markTestSkipped('**WIP** Revisit this test');
 	}
 
 	//TODO: expected this to break but this method goes ahead and turns
