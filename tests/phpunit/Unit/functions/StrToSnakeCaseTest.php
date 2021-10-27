@@ -2,8 +2,12 @@
 
 namespace Cig\Tests\Unit;
 
+
 class StrToSnakeCaseTest extends \Cig\Tests\Unit\BaseTestCase {
 
+	/**
+	 * @covers ::\Cig\str_to_snake_case()
+	 */
 	public function test_str_to_snake_case(): void {
 		$string = "welcome~ to *snake case!!";
 		$expected_result = "welcome_to_snake_case";

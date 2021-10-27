@@ -2,8 +2,12 @@
 
 namespace Cig\Tests\Unit;
 
+
 class StrToKebabCaseTest extends \Cig\Tests\Unit\BaseTestCase {
 
+	/**
+	 * @covers ::\Cig\str_to_kebab_case()
+	 */
 	public function test_str_to_kebab_case(): void {
 		$string = "welcome~ to *kebab case!!";
 		$expected_result = "welcome-to-kebab-case";

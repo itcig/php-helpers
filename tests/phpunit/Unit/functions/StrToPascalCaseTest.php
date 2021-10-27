@@ -2,8 +2,12 @@
 
 namespace Cig\Tests\Unit;
 
+
 class StrToPascalCaseTest extends \Cig\Tests\Unit\BaseTestCase {
 
+	/**
+	 * @covers ::\Cig\str_to_pascal_case()
+	 */
 	public function test_str_to_pascal_case(): void {
 		$string = "welcome~ to *pascal case!!";
 		$expected_result = "WelcomeToPascalCase";

@@ -2,11 +2,19 @@
 
 namespace Cig\Tests\Unit;
 
+//TODO: add data provider for all these redundant string tests (in setup?)
+
+
 class StrToCamelCaseTest extends \Cig\Tests\Unit\BaseTestCase {
 
+	/**
+	 * @covers ::\Cig\str_to_camel_case()
+	 */
 	public function test_str_to_camel_case(): void {
 		$string = "welcome~ to camel' case!!";
 		$expected_result = "welcomeToCamelCase";
+//		$string = "D'Angelo";
+//		$expected_result = "dAngelo";
 
 		//this method uses another method (str_to_words) from same file (string.php)
 		$result = \Cig\str_to_camel_case($string);
