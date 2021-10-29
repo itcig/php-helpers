@@ -16,6 +16,7 @@ class StrToHumanReadableTest extends \Cig\Tests\Unit\BaseTestCase {
 				'camel Case String Test'
 			],
 			// note: not technically a 'fail' but incorrectly separates surnames with bicapital
+			// TODO: add option to pass in lowercase var for str_to_words?
 			'bicapital' => [
 				// string
 				'danny-DeVito_',
@@ -81,7 +82,7 @@ class StrToHumanReadableTest extends \Cig\Tests\Unit\BaseTestCase {
 	 */
 	public function test_str_to_human_readable_no_space_bicapital(): void {
 		$string = 'DannyDeVito';
-		$expected_result = 'Danny DeVito'; 
+		$expected_result = 'Danny DeVito';
 
 		self::markTestSkipped('**WIP** Revisit this test');
 	}
