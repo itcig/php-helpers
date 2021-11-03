@@ -1,5 +1,9 @@
 <?php
 
+// NOTE: I don't know why this is necessary to honor typing for
+// test_number_to_camel_case(), but it won't fail properly without it.
+declare(strict_types=1);
+
 namespace Cig\Tests\Unit\Functions;
 
 class StrToCamelCaseTest extends \Cig\Tests\Unit\BaseTestCase {
@@ -31,16 +35,13 @@ class StrToCamelCaseTest extends \Cig\Tests\Unit\BaseTestCase {
 		self::markTestSkipped('**WIP** Revisit this test');
 	}
 
-	//TODO: expected this to break but this method goes ahead and turns
-	// numbers into strings despite typescript asking for a string
 	public function test_number_to_camel_case(): void {
 		$not_a_string = 101;
 		// $expected_result = don't expect a result;
 
-		// TODO: showing test with string result to document. correct or add refactor note?
-		$method_result = '101';
-		$result = \Cig\str_to_camel_case($not_a_string);
+		$this->expectError();
+		$this->expectErrorMessage('Argument 1 passed to Cig\str_to_camel_case() must be of the type string, int given');
 
-		self::assertSame($method_result, $result);
+		$result = \Cig\str_to_camel_case($not_a_string);
 	}
 }
