@@ -6,11 +6,11 @@ namespace Cig\Tests\Unit\Functions;
 
 class StrToWordsTest extends \Cig\Tests\Unit\BaseTestCase {
 
-	public function provide_str_to words_data(): array {
-	//			return [
-	////						 dataProvider to come
-	//				];
-	//		}
+	public function provide_str_to_words_data(): array {
+		return [
+			// dataProvider to come
+		];
+	}
 
 public
 function test_str_to_words(): void {
