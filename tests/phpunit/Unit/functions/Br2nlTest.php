@@ -13,9 +13,8 @@ line break';
 
 		$result = \Cig\br2nl($string);
 
+		self::assertIsString($result);
 		self::assertSame($expected_result, $result);
-
-		self::assertTrue(TRUE);
 	}
 
 	public function test_br_no_whack(): void {
