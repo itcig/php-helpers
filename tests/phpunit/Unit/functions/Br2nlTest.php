@@ -17,4 +17,24 @@ line break';
 
 		self::assertTrue(TRUE);
 	}
+
+	public function test_br_no_whack(): void {
+		$string = "here is a <br>line break";
+//		$expected_result = 'here is a
+//line break';
+
+		$result = \Cig\br2nl($string);
+
+		self::markTestSkipped('**WIP** Revisit this test — does not consider br without whack');
+	}
+
+	public function test_br_no_space(): void {
+		$string = "here is a <br>line break";
+//		$expected_result = 'here is a
+//line break';
+
+		$result = \Cig\br2nl($string);
+
+		self::markTestSkipped('**WIP** Revisit this test - does not consider br without space');
+	}
 }
