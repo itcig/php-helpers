@@ -46,4 +46,17 @@ class IsAssocTest extends \Cig\Tests\Unit\BaseTestCase {
 		//	self::assertIsBool($result);
 		//	self::assertSame($expected_result, $result);
 	}
+
+	/**
+	 * @covers ::\Cig\is_assoc()
+	 */
+	public function test_is_assoc_not_array(): void {
+		$array = 'loch ness hydra and quetzalcoatl';
+		$expected_result = FALSE;
+
+		$this->expectError();
+		$this->expectErrorMessage('Argument #1 ($arr) must be of type array, string given');
+
+		$result = \Cig\is_assoc($array);
+	}
 }
