@@ -40,7 +40,7 @@ class StrToCamelCaseTest extends \Cig\Tests\Unit\BaseTestCase {
 		// $expected_result = don't expect a result;
 
 		$this->expectError();
-		$this->expectErrorMessage('Argument 1 passed to Cig\str_to_camel_case() must be of the type string, int given');
+		$this->expectErrorMessage('Argument #1 ($string) must be of type string, int given');
 
 		$result = \Cig\str_to_camel_case($not_a_string);
 	}

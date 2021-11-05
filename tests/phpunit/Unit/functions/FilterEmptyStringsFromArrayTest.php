@@ -50,7 +50,7 @@ class FilterEmptyStringsFromArrayTest extends \Cig\Tests\Unit\BaseTestCase {
 		// $expected_result = 'don't expect a result';
 
 		$this->expectError();
-		$this->expectErrorMessage('Argument 1 passed to Cig\filter_empty_strings_from_array() must be of the type array, string given');
+		$this->expectErrorMessage('Argument #1 ($arr) must be of type array, string given');
 
 		$result = \Cig\filter_empty_strings_from_array($array);
 	}

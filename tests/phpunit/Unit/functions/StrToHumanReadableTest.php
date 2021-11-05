@@ -95,7 +95,7 @@ class StrToHumanReadableTest extends \Cig\Tests\Unit\BaseTestCase {
 		// $expected_result = ;
 
 		$this->expectError();
-		$this->expectErrorMessage('Argument 1 passed to Cig\str_to_human_readable() must be of the type string, array given');
+		$this->expectErrorMessage('Argument #1 ($string) must be of type string, array given');
 
 		$result = \Cig\str_to_human_readable($array);
 	}
