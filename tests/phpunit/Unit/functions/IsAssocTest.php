@@ -30,4 +30,20 @@ class IsAssocTest extends \Cig\Tests\Unit\BaseTestCase {
 		self::assertIsBool($result);
 		self::assertSame($expected_result, $result);
 	}
+
+	/**
+	 * TODO: shouldn't this fail?
+	 * @covers ::\Cig\is_assoc()
+	 */
+	public function test_is_assoc_mixed(): void {
+		$array = ['scotland' => 'loch ness', 1 => 'hydra', 2 => 'quetzalcoatl'];
+		$expected_result = TRUE; // ??
+
+		$result = \Cig\is_assoc($array);
+
+		self::markTestSkipped('**WIP** Revisit this test');
+
+		//	self::assertIsBool($result);
+		//	self::assertSame($expected_result, $result);
+	}
 }
