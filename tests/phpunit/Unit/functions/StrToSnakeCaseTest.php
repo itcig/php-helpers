@@ -5,6 +5,8 @@ namespace Cig\Tests\Unit\Functions;
 
 class StrToSnakeCaseTest extends \Cig\Tests\Unit\BaseTestCase {
 
+	//	TODO: stub str_to_words
+
 	/**
 	 * @covers ::\Cig\str_to_snake_case()
 	 */

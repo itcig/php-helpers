@@ -16,7 +16,7 @@ class IsJsonTest extends \Cig\Tests\Unit\BaseTestCase {
 //		self::assertIsBool($result);
 //		self::assertTrue($result);
 
-		//TODO: is this only files/documents or an actual json string
+		//TODO: is this only files/documents or an actual json string?
 		self::markTestSkipped('**WIP** Revisit - json is coming back false on json strings');
 	}
 

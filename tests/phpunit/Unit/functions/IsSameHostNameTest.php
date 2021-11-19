@@ -5,6 +5,8 @@ namespace Cig\Tests\Unit\Functions;
 
 class IsSameHostNameTest extends \Cig\Tests\Unit\BaseTestCase {
 
+//	TODO: could use a dataProvider
+
 	/**
 	 * @covers ::\Cig\is_same_hostname()
 	 */

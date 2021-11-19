@@ -5,6 +5,8 @@ namespace Cig\Tests\Unit\Functions;
 
 class StrToPascalCaseTest extends \Cig\Tests\Unit\BaseTestCase {
 
+	//	TODO: stub str_to_words
+
 	/**
 	 * @covers ::\Cig\str_to_pascal_case()
 	 */

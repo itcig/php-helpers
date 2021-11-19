@@ -1,7 +1,5 @@
 <?php
 
-// NOTE: I don't know why this is necessary to honor typing for
-// test_number_to_camel_case(), but it won't fail properly without it.
 declare(strict_types=1);
 
 namespace Cig\Tests\Unit\Functions;
