@@ -12,6 +12,8 @@ class StrToCamelCaseTest extends \Cig\Tests\Unit\BaseTestCase {
 	public function test_str_to_camel_case(): void {
 		$string = "welcome~ to camel' case!!";
 		$expected_result = "welcomeToCamelCase";
+		//		TODO: order of operations error with stubbing a function (str_to_words) in the same file as str_to_camel_case()
+		//		Functions\stubs(['\CIG\str_to_words' => ['welcome', 'to', 'camel', 'case']]);
 
 		//this method uses another method (str_to_words) from same file (string.php)
 		$result = \Cig\str_to_camel_case($string);

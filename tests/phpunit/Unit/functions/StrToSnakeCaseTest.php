@@ -2,10 +2,10 @@
 
 namespace Cig\Tests\Unit\Functions;
 
+use Brain\Monkey\Functions;
+
 
 class StrToSnakeCaseTest extends \Cig\Tests\Unit\BaseTestCase {
-
-	//	TODO: stub str_to_words
 
 	/**
 	 * @covers ::\Cig\str_to_snake_case()
@@ -14,7 +14,9 @@ class StrToSnakeCaseTest extends \Cig\Tests\Unit\BaseTestCase {
 		$string = "welcome~ to *snake case!!";
 		$expected_result = "welcome_to_snake_case";
 
-		//this method uses another method (str_to_words) from same file
+		//		TODO: order of operations error with stubbing a function (str_to_words) in the same file as str_to_snake_case()
+		//		Functions\stubs(['\CIG\str_to_words' => ['welcome', 'to', 'snake', 'case']]);
+
 		$result = \Cig\str_to_snake_case($string);
 
 		self::assertIsString($result);

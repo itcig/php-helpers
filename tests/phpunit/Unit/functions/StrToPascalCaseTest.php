@@ -2,10 +2,9 @@
 
 namespace Cig\Tests\Unit\Functions;
 
+use Brain\Monkey\Functions;
 
 class StrToPascalCaseTest extends \Cig\Tests\Unit\BaseTestCase {
-
-	//	TODO: stub str_to_words
 
 	/**
 	 * @covers ::\Cig\str_to_pascal_case()
@@ -13,6 +12,8 @@ class StrToPascalCaseTest extends \Cig\Tests\Unit\BaseTestCase {
 	public function test_str_to_pascal_case(): void {
 		$string = "welcome~ to *pascal case!!";
 		$expected_result = "WelcomeToPascalCase";
+//		TODO: order of operations error with stubbing a function (str_to_words) in the same file as str_to_pascal_case()
+//		Functions\stubs(['\CIG\str_to_words' => ['welcome', 'to', 'pascal', 'case']]);
 
 		//this method uses another method (str_to_words) from same file
 		$result = \Cig\str_to_pascal_case($string);

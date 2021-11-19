@@ -59,6 +59,9 @@ class StrToHumanReadableTest extends \Cig\Tests\Unit\BaseTestCase {
 	 * @param $expected_result
 	 */
 	public function test_str_to_human_readable($string, $expected_result): void {
+		//		TODO: order of operations error with stubbing a function (str_to_words) in the same file as str_to_human_readable()
+		//		Functions\stubs(['\CIG\str_to_words' => [/*$stubkey would be in dataprovider*/]]);
+
 		$result = \Cig\str_to_human_readable($string);
 
 		self::assertIsString($result);

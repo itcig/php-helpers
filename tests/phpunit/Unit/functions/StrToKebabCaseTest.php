@@ -6,16 +6,16 @@ namespace Cig\Tests\Unit\Functions;
 
 class StrToKebabCaseTest extends \Cig\Tests\Unit\BaseTestCase {
 
-//	TODO: stub str_to_words
-
 	/**
 	 * @covers ::\Cig\str_to_kebab_case()
 	 */
 	public function test_str_to_kebab_case(): void {
-		$string = "welcome~ to *kebab case!!";
-		$expected_result = "welcome-to-kebab-case";
+		$string = 'welcome~ to *kebab case!!';
+		$expected_result = 'welcome-to-kebab-case';
 
-		//this method uses another method (str_to_words) from same file
+		//		TODO: order of operations error with stubbing a function (str_to_words) in the same file as str_to_kebab_case()
+		//		Functions\stubs(['\CIG\str_to_words' => ['welcome', 'to', 'kebab', 'case']]);
+
 		$result = \Cig\str_to_kebab_case($string);
 
 		self::assertIsString($result);
@@ -25,9 +25,6 @@ class StrToKebabCaseTest extends \Cig\Tests\Unit\BaseTestCase {
 	public function test_number_to_kebab_case(): void {
 		$not_a_string = 1011;
 		// $expected_result = "don't expect result";
-
-		// TODO: showing test with string result to document. correct or refactor?
-		$method_result = '1011';
 
 		self::expectError();
 		self::expectErrorMessage('Argument 1 passed to Cig\str_to_kebab_case() must be of the type string, int given');
