@@ -9,45 +9,45 @@ class StrToHumanReadableTest extends \Cig\Tests\Unit\BaseTestCase {
 	 */
 	public function provide_str_case_data(): array {
 		return [
-			'camelCase' => [
-				// string
-				'camelCaseStringTest',
-				//  expected result
-				'camel Case String Test'
-			],
+				'camelCase' => [
+					// string
+						'camelCaseStringTest',
+					//  expected result
+						'camel Case String Test'
+				],
 			// note: not technically a 'fail' but incorrectly separates surnames with bicapital
 			// TODO: add option to pass in lowercase var for str_to_words?
-			'bicapital' => [
-				// string
-				'danny-DeVito_',
-				//  expected result
-				'danny De Vito'
-			],
-			'pascal' => [
-				// string
-				'PascalCaseIsTheCase',
-				//  expected result
-				'Pascal Case Is The Case'
-			],
-			'snake' => [
-				// string
-				'itsa_me_snake_case',
-				//  expected result
-				'itsa me snake case'
-			],
-			'kebab' => [
-				// string
-				'kebab-case-pepper-tomato',
-				//  expected result
-				'kebab case pepper tomato'
-			],
+				'bicapital' => [
+					// string
+						'danny-DeVito_',
+					//  expected result
+						'danny De Vito'
+				],
+				'pascal' => [
+					// string
+						'PascalCaseIsTheCase',
+					//  expected result
+						'Pascal Case Is The Case'
+				],
+				'snake' => [
+					// string
+						'itsa_me_snake_case',
+					//  expected result
+						'itsa me snake case'
+				],
+				'kebab' => [
+					// string
+						'kebab-case-pepper-tomato',
+					//  expected result
+						'kebab case pepper tomato'
+				],
 			//TODO: another instance of integers turning into strings: expected or should this fail?
-			'integer' => [
-				// int
-				42,
-				//  expected result
-				'42'
-			],
+				'integer' => [
+					// int
+						42,
+					//  expected result
+						'42'
+				],
 		];
 	}
 
@@ -59,6 +59,9 @@ class StrToHumanReadableTest extends \Cig\Tests\Unit\BaseTestCase {
 	 * @param $expected_result
 	 */
 	public function test_str_to_human_readable($string, $expected_result): void {
+		//		TODO: order of operations error with stubbing a function (str_to_words) in the same file as str_to_human_readable()
+		//		Functions\stubs(['\CIG\str_to_words' => [/*$stubkey would be in dataprovider*/]]);
+
 		$result = \Cig\str_to_human_readable($string);
 
 		self::assertIsString($result);

@@ -2,8 +2,6 @@
 
 namespace Cig\Tests\Unit\Functions;
 
-//TODO: string helpers are really stepping on each other in string.php
-
 class Br2nlTest extends \Cig\Tests\Unit\BaseTestCase {
 
 	/**
