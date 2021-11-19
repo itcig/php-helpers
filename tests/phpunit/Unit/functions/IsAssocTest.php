@@ -55,7 +55,7 @@ class IsAssocTest extends \Cig\Tests\Unit\BaseTestCase {
 		$expected_result = FALSE;
 
 		$this->expectError();
-		$this->expectErrorMessage('Argument #1 ($arr) must be of type array, string given');
+		$this->expectErrorMessage('Argument 1 passed to Cig\is_assoc() must be of the type array, string given');
 
 		$result = \Cig\is_assoc($array);
 	}
