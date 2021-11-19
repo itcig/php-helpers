@@ -38,7 +38,7 @@ class FilterEmptyStringsFromArrayTest extends \Cig\Tests\Unit\BaseTestCase {
 	 * @param $array
 	 * @param $expected_result
 	 */
-	public function test_filter_empty_strings_from_array($array, $expected_result): void {
+	public function test_filter_empty_strings_from_array(array $array, array $expected_result): void {
 		$result = \Cig\filter_empty_strings_from_array($array);
 
 		self::assertIsArray($result);
