@@ -9,24 +9,24 @@ class FilterEmptyStringsFromArrayTest extends \Cig\Tests\Unit\BaseTestCase {
 	 */
 	public function provide_empty_string_array_data(): array {
 		return [
-			'non_assoc' => [
-				//array
-				['dracula', '', 'werewolf'],
-				//expected result
-				[0 => 'dracula', 2 => 'werewolf'],
-			],
-			'assoc' => [
-				//array
-				['werewolf' => 'full moon', '', 'mummy' => '', 'dracula' => 'castle'],
-				//expected result
-				['werewolf' => 'full moon', 'dracula' => 'castle'],
-			],
-			'mixed_array' => [
-				//array
-				[0 => 'full moon', 1 => '', 'mummy' => '', 'dracula' => 'castle'],
-				//expected result
-				[0 => 'full moon', 'dracula' => 'castle'],
-			],
+				'non_assoc' => [
+					//array
+						['dracula', '', 'werewolf'],
+					//expected result
+						[0 => 'dracula', 2 => 'werewolf'],
+				],
+				'assoc' => [
+					//array
+						['werewolf' => 'full moon', '', 'mummy' => '', 'dracula' => 'castle'],
+					//expected result
+						['werewolf' => 'full moon', 'dracula' => 'castle'],
+				],
+				'mixed_array' => [
+					//array
+						[0 => 'full moon', 1 => '', 'mummy' => '', 'dracula' => 'castle'],
+					//expected result
+						[0 => 'full moon', 'dracula' => 'castle'],
+				],
 		];
 	}
 
@@ -50,7 +50,7 @@ class FilterEmptyStringsFromArrayTest extends \Cig\Tests\Unit\BaseTestCase {
 		// $expected_result = 'don't expect a result';
 
 		$this->expectError();
-		$this->expectErrorMessage('Argument #1 ($arr) must be of type array, string given');
+		$this->expectErrorMessage('Argument 1 passed to Cig\filter_empty_strings_from_array() must be of the type array, string given');
 
 		$result = \Cig\filter_empty_strings_from_array($array);
 	}
