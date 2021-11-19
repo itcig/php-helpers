@@ -8,6 +8,6 @@ class BaseTestCase extends \Cig\PHPUnit\Unit\TestCase {
 
 	protected function setUp(): void {
 		parent::setUp();
-		auto_load_from_path(PHP_HELPERS_PATH . 'src/functions', PHP_HELPERS_PATH);
+		auto_load_from_path(PHP_HELPERS_PATH . 'src/Functions', PHP_HELPERS_PATH);
 	}
 }
