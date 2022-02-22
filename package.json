@@ -1,0 +1,29 @@
+{
+	"name": "@itcig/php-helpers",
+	"version": "1.2.1",
+	"license": "MIT",
+	"description": "PHP helper methods",
+	"author": {
+		"name": "ITCIG",
+		"email": "it@capinfogroup.com"
+	},
+	"homepage": "https://github.com/itcig/php-helpers",
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/itcig/php-helpers.git"
+	},
+	"scripts": {
+		"build": "echo 'Not implemented.'",
+		"clean": "true",
+		"distclean": "rm -rf node_modules && yarn run clean",
+		"install-if-deps-outdated": "yarn install --no-prod --frozen-lockfile"
+	},
+	"bugs": {
+		"url": "https://github.com/itcig/itcig/issues"
+	},
+	"extra": {
+		"autotagger": true,
+		"autorelease": true,
+		"mirror-repo": "itcig/php-helpers"
+	}
+}

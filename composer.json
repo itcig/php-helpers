@@ -1,0 +1,54 @@
+{
+	"name": "itcig/php-helpers",
+	"version": "1.2.0",
+	"description": "PHP helper methods",
+	"type": "library",
+	"homepage": "https://github.com/itcig/phpunit",
+	"license": "MIT",
+	"authors": [
+		{
+			"name": "ITCIG",
+			"email": "it@capinfogroup.com",
+			"homepage": "https://github.com/itcig"
+		}
+	],
+	"support": {
+		"issues": "https://github.com/itcig/php-helpers/issues",
+		"source": "https://github.com/itcig/php-helpers"
+	},
+	"minimum-stability": "dev",
+	"prefer-stable": true,
+	"config": {
+		"sort-packages": true
+	},
+	"repositories": [],
+	"require": {
+		"php": "^7.2 || ^8.0"
+	},
+	"autoload": {
+		"files": [
+			"src/index.php"
+		],
+		"psr-4": {
+			"Cig\\": "src/"
+		}
+	},
+	"autoload-dev": {
+		"psr-4": {
+			"Cig\\Tests\\": "tests/phpunit"
+		}
+	},
+	"extra": {
+		"branch-alias": {
+			"dev-main": "1.2.x-dev"
+		}
+	},
+	"scripts": {
+		"phpunit": [
+			"./vendor/bin/phpunit --colors=always"
+		],
+		"test": [
+			"@composer phpunit"
+		]
+	}
+}
