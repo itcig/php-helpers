@@ -1,6 +1,6 @@
 {
 	"name": "itcig/php-helpers",
-	"version": "1.2.0",
+	"version": "1.3.0",
 	"description": "PHP helper methods",
 	"type": "library",
 	"homepage": "https://github.com/itcig/phpunit",
@@ -40,7 +40,7 @@
 	},
 	"extra": {
 		"branch-alias": {
-			"dev-main": "1.2.x-dev"
+			"dev-main": "1.3.x-dev"
 		}
 	},
 	"scripts": {
