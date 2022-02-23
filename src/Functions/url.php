@@ -55,7 +55,7 @@ function url_path(?string $url = null): ?string {
 function parse_querystring(?string $url = null): ?array {
     $qs_array = [];
 
-    parse_str(parse_url($url ?? (current_url() ?? ''), PHP_URL_QUERY), $qs_array);
+    parse_str(parse_url($url ?? (current_url() ?? ""), PHP_URL_QUERY) ?? "", $qs_array);
 
     return !empty($qs_array) ? $qs_array : null;
 }
@@ -111,4 +111,28 @@ function is_same_root_domain(string $url, ?string $url2 = null): bool {
     }
 
     return get_root_domain($url) === get_root_domain($url2 ?? current_url());
+}
+
+/**
+ * Append or overwrite querystring values to a URL
+ *
+ * @param array       $qs_params Array of data to append or modify on the URLs querystring.
+ * @param string|null $url A fully-qaulified URI or use the current URL if none passed.
+ *
+ * @return string
+ */
+function url_modify_querystring(array $qs_params, ?string $url): string {
+    $base_url = strtok($url ?? current_url(), "?");
+
+    $existing_qs = parse_querystring($url) ?? [];
+
+    $final_qs_data = array_merge($existing_qs, $qs_params);
+
+    if (!empty($final_qs_data)) {
+        $new_url = $base_url . "?" . http_build_query($final_qs_data);
+    } else {
+        $new_url = $base_url;
+    }
+
+    return $new_url;
 }
