@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "ccb0d8b4e09a49d19e603823821d860f",
+    "content-hash": "8034718e105d52fd4abee64be681c687",
     "packages": [],
     "packages-dev": [
         {
@@ -393,11 +393,11 @@
         },
         {
             "name": "itcig/phpunit",
-            "version": "0.2.21",
+            "version": "0.3.0-alpha.0",
             "dist": {
                 "type": "path",
                 "url": "../phpunit",
-                "reference": "b1b524cce8d7ade213f5c7c61efca2b349766bf9"
+                "reference": "ac3627687c7023723e2ba2e85de8205dbbb6dc9b"
             },
             "require": {
                 "brain/monkey": "^2.0",
@@ -410,7 +410,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-main": "0.2.x-dev"
+                    "dev-main": "0.3.x-dev"
                 }
             },
             "autoload": {

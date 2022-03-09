@@ -27,7 +27,7 @@
 	},
 	"require-dev": {
 		"itcig/php-coding-standards": "^0.2",
-		"itcig/phpunit": "^0.2"
+		"itcig/phpunit": "^0.3"
 	},
 	"autoload": {
 		"files": [
