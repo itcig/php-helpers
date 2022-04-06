@@ -1,6 +1,6 @@
 {
 	"name": "itcig/php-helpers",
-	"version": "1.4.0",
+	"version": "1.5.0",
 	"description": "PHP helper methods",
 	"type": "library",
 	"homepage": "https://github.com/itcig/phpunit",
@@ -29,8 +29,8 @@
 		"php": "^7.2 || ^8.0"
 	},
 	"require-dev": {
-		"itcig/php-coding-standards": "^0.3",
-		"itcig/phpunit": "^0.3"
+		"itcig/php-coding-standards": "^0.4",
+		"itcig/phpunit": "^0.4"
 	},
 	"autoload": {
 		"files": [
@@ -47,12 +47,33 @@
 	},
 	"extra": {
 		"branch-alias": {
-			"dev-main": "1.4.x-dev"
+			"dev-main": "1.5.x-dev"
 		}
 	},
 	"scripts": {
+		"phpcs:changed": [
+			"Composer\\Config::disableProcessTimeout",
+			"phpcs-changed -s --git"
+		],
+		"phpcs:fix": [
+			"Composer\\Config::disableProcessTimeout",
+			"./vendor/bin/phpcbf --standard=./phpcs.xml.dist"
+		],
+		"phpcs:compatibility": [
+			"@phpcs:lint --standard=./phpcs.xml.dist"
+		],
+		"phpcs:lint": [
+			"Composer\\Config::disableProcessTimeout",
+			"./vendor/bin/phpcs -ps"
+		],
+		"phpcs:lint:errors": [
+			"@phpcs:lint --runtime-set ignore_warnings_on_exit 1"
+		],
 		"phpunit": [
 			"./vendor/bin/phpunit --colors=always"
+		],
+		"test-coverage": [
+			"phpdbg -d memory_limit=2048M -d max_execution_time=900 -qrr ./vendor/bin/phpunit --coverage-clover \"$COVERAGE_DIR/clover.xml\""
 		],
 		"test": [
 			"@composer phpunit"

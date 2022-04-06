@@ -3,6 +3,15 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.5.0](https://github.com/itcig/itcig/compare/@itcig/php-helpers@1.4.0...@itcig/php-helpers@1.5.0) (2022-04-06)
+
+
+### Features
+
+* add additional query string functions ([#23](https://github.com/itcig/itcig/issues/23)) ([3b19671](https://github.com/itcig/itcig/commit/3b19671609b692519bcea043037f929a160b1b63))
+
+
+
 ## [1.4.0](https://github.com/itcig/itcig/compare/@itcig/php-helpers@1.3.4...@itcig/php-helpers@1.4.0) (2022-03-10)
 
 

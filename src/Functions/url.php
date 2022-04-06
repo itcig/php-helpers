@@ -136,3 +136,46 @@ function url_modify_querystring(array $qs_params, ?string $url): string {
 
     return $new_url;
 }
+
+/**
+ * Check a passed in URL for a specified key in the query string
+ *
+ * @param string $key The key to search for
+ * @param string $url The URL containing the query string
+ * @return bool Whether a query string contains a specified key
+ */
+function query_string_contains_key(string $key, string $url): bool {
+    $parsed_qs = \Cig\parse_querystring($url);
+    return isset($parsed_qs[$key]);
+}
+
+/**
+ * Search a query string for specified keys and if found, update their value's to the passed in key's values
+ * If the key is not found in the query string the key and value will not be added unlike \Cig\url_modify_querystring()
+ *
+ * @param array  $params List of key value pairs to update in the query string
+ * @param string $url The URL containing the query string
+ * @return string If matching keys are found their value's will be update; otherwise the original URL will be returned unchanged
+ */
+function update_existing_query_string_keys_values(array $params, string $url): string {
+    $param_keys = array_keys($params);
+    $updated_url = $url;
+    for ($i = 0, $imax = count($params); $i < $imax; $i++) {
+        $assoc_key = $param_keys[$i];
+        $updated_url = \Cig\update_existing_query_string_key_value($assoc_key, $params[$assoc_key], $updated_url);
+    }
+    return $updated_url;
+}
+
+/**
+ * If a query string contains the specified key, update it's value; otherwise return the original URL
+ *
+ * @param string $key The key who's value will be updated
+ * @param string $value The new value for the passed in key
+ * @param string $url The string that may contain the passed in query string key
+ * @return string If the passed in URL contains the passed in key it will have the passed in
+ *                value associated to it; otherwise the passed in url is returned unchanged
+ */
+function update_existing_query_string_key_value(string $key, string $value, string $url): string {
+    return \Cig\query_string_contains_key($key, $url) ? \Cig\url_modify_querystring([$key => $value], $url) : $url;
+}
