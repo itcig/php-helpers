@@ -29,8 +29,8 @@
 		"php": "^7.2 || ^8.0"
 	},
 	"require-dev": {
-		"itcig/php-coding-standards": "^0.4",
-		"itcig/phpunit": "^0.4"
+		"itcig/php-coding-standards": "^0.5",
+		"itcig/phpunit": "^0.5"
 	},
 	"autoload": {
 		"files": [
