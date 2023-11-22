@@ -3,6 +3,15 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+### [1.5.1](https://github.com/itcig/itcig/compare/@itcig/php-helpers@1.5.0...@itcig/php-helpers@1.5.1) (2023-11-22)
+
+
+### Bug Fixes
+
+* do not include port 80 or 443 ([#39](https://github.com/itcig/itcig/issues/39)) ([429949f](https://github.com/itcig/itcig/commit/429949f9fd130f399ce8de35cd46d100e6de0135))
+
+
+
 ## [1.5.0](https://github.com/itcig/itcig/compare/@itcig/php-helpers@1.4.0...@itcig/php-helpers@1.5.0) (2022-04-06)
 
 

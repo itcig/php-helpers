@@ -8,7 +8,7 @@
 namespace Cig;
 
 /**
- * Get theh current URL.
+ * Get the current URL
  *
  * @return string|null
  */
@@ -19,19 +19,16 @@ function current_url(): ?string {
     }
 
     $ssl = !empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] == 'on';
-
     $sp = strtolower($_SERVER['SERVER_PROTOCOL']);
-
     $protocol = substr($sp, 0, strpos($sp, '/')) . ($ssl ? 's' : '');
 
-    $port =
-    (!$ssl && $_SERVER['SERVER_PORT'] === '80') || ($ssl && $_SERVER['SERVER_PORT'] === '443')
-      ? ''
-      : ':' . $_SERVER['SERVER_PORT'];
+    // This is borrowed from wp-rocket
+    $port = (int) $_SERVER['SERVER_PORT'];
+    $port = 80 !== $port && 443 !== $port ? ":$port" : '';
 
     $host = !empty($_SERVER['SERVER_NAME']) ? $_SERVER['SERVER_NAME'] . $port : $_SERVER['HTTP_HOST'];
 
-    return $protocol . '://' . $host . $_SERVER['REQUEST_URI'];
+    return "$protocol://$host{$_SERVER['REQUEST_URI']}";
 }
 
 /**
