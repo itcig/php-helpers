@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "b7e5ea324037b7e52fddf9c7a88f9fd0",
+    "content-hash": "54ad1b2723a038b7934a313147d45d97",
     "packages": [],
     "packages-dev": [
         {
@@ -323,11 +323,11 @@
         },
         {
             "name": "itcig/php-coding-standards",
-            "version": "0.5.0",
+            "version": "0.6.0",
             "dist": {
                 "type": "path",
                 "url": "../php-coding-standards",
-                "reference": "56b1182943e2084db730ea1b71d2016e8a3e0a28"
+                "reference": "be0a774634fbe6545e6293d010541ef0c9700f6e"
             },
             "require": {
                 "php": "^7.2 || ^8",
@@ -347,7 +347,7 @@
             "type": "phpcodesniffer-standard",
             "extra": {
                 "branch-alias": {
-                    "dev-main": "0.5.x-dev"
+                    "dev-main": "0.6.x-dev"
                 }
             },
             "scripts": {
@@ -393,11 +393,11 @@
         },
         {
             "name": "itcig/phpunit",
-            "version": "0.5.0",
+            "version": "0.6.0",
             "dist": {
                 "type": "path",
                 "url": "../phpunit",
-                "reference": "e4a44aefb4a0d6611a837b69968ad7752a0f7a7c"
+                "reference": "b1458477777f85219322e512805b2cf67bba0507"
             },
             "require": {
                 "brain/monkey": "^2.0",
@@ -405,12 +405,12 @@
                 "phpunit/phpunit": "^9.0"
             },
             "require-dev": {
-                "itcig/php-coding-standards": "^0.5"
+                "itcig/php-coding-standards": "^0.6"
             },
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-main": "0.5.x-dev"
+                    "dev-main": "0.6.x-dev"
                 }
             },
             "autoload": {
